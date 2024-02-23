@@ -3,37 +3,37 @@ pragma solidity 0.5.16;
 
 interface IBEP20 {
   /**
-   * @dev Returns the amount of tokens in existence.
+   * @main Returns the amount of tokens in existence.
    */
   function totalSupply() external view returns (uint256);
 
   /**
-   * @dev Returns the token decimals.
+   * @main Returns the token decimals.
    */
   function decimals() external view returns (uint8);
 
   /**
-   * @dev Returns the token symbol.
-   */
+   * @main Returns the token symbol.
+
   function symbol() external view returns (string memory);
 
   /**
-  * @dev Returns the token name.
+  * @main Returns the token name.
   */
   function name() external view returns (string memory);
 
   /**
-   * @dev Returns the bep token owner.
+   * @main Returns the bep token owner.
    */
   function getOwner() external view returns (address);
 
   /**
-   * @dev Returns the amount of tokens owned by `account`.
+   * @main Returns the amount of tokens owned by `account`.
    */
   function balanceOf(address account) external view returns (uint256);
 
   /**
-   * @dev Moves `amount` tokens from the caller's account to `recipient`.
+   * @main Moves `amount` tokens from the caller's account to `recipient`.
    *
    * Returns a boolean value indicating whether the operation succeeded.
    *
@@ -42,7 +42,7 @@ interface IBEP20 {
   function transfer(address recipient, uint256 amount) external returns (bool);
 
   /**
-   * @dev Returns the remaining number of tokens that `spender` will be
+   * @main Returns the remaining number of tokens that `spender` will be
    * allowed to spend on behalf of `owner` through {transferFrom}. This is
    * zero by default.
    *
@@ -51,7 +51,7 @@ interface IBEP20 {
   function allowance(address _owner, address spender) external view returns (uint256);
 
   /**
-   * @dev Sets `amount` as the allowance of `spender` over the caller's tokens.
+   * @main Sets `amount` as the allowance of `spender` over the caller's tokens.
    *
    * Returns a boolean value indicating whether the operation succeeded.
    *
@@ -67,7 +67,7 @@ interface IBEP20 {
   function approve(address spender, uint256 amount) external returns (bool);
 
   /**
-   * @dev Moves `amount` tokens from `sender` to `recipient` using the
+   * @main Moves `amount` tokens from `sender` to `recipient` using the
    * allowance mechanism. `amount` is then deducted from the caller's
    * allowance.
    *
@@ -78,7 +78,7 @@ interface IBEP20 {
   function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
 
   /**
-   * @dev Emitted when `value` tokens are moved from one account (`from`) to
+   * @main Emitted when `value` tokens are moved from one account (`from`) to
    * another (`to`).
    *
    * Note that `value` may be zero.
@@ -86,14 +86,14 @@ interface IBEP20 {
   event Transfer(address indexed from, address indexed to, uint256 value);
 
   /**
-   * @dev Emitted when the allowance of a `spender` for an `owner` is set by
+   * @main Emitted when the allowance of a `spender` for an `owner` is set by
    * a call to {approve}. `value` is the new allowance.
    */
   event Approval(address indexed owner, address indexed spender, uint256 value);
 }
 
 /*
- * @dev Provides information about the current execution context, including the
+ * @main Provides information about the current execution context, including the
  * sender of the transaction and its data. While these are generally available
  * via msg.sender and msg.data, they should not be accessed in such a direct
  * manner, since when dealing with GSN meta-transactions the account sending and
@@ -118,7 +118,7 @@ contract Context {
 }
 
 /**
- * @dev Wrappers over Solidity's arithmetic operations with added overflow
+ * @main Wrappers over Solidity's arithmetic operations with added overflow
  * checks.
  *
  * Arithmetic operations in Solidity wrap on overflow. This can easily result
@@ -132,7 +132,7 @@ contract Context {
  */
 library SafeMath {
   /**
-   * @dev Returns the addition of two unsigned integers, reverting on
+   * @main Returns the addition of two unsigned integers, reverting on
    * overflow.
    *
    * Counterpart to Solidity's `+` operator.
@@ -148,7 +148,7 @@ library SafeMath {
   }
 
   /**
-   * @dev Returns the subtraction of two unsigned integers, reverting on
+   * @main Returns the subtraction of two unsigned integers, reverting on
    * overflow (when the result is negative).
    *
    * Counterpart to Solidity's `-` operator.
@@ -161,7 +161,7 @@ library SafeMath {
   }
 
   /**
-   * @dev Returns the subtraction of two unsigned integers, reverting with custom message on
+   * @main Returns the subtraction of two unsigned integers, reverting with custom message on
    * overflow (when the result is negative).
    *
    * Counterpart to Solidity's `-` operator.
@@ -177,7 +177,7 @@ library SafeMath {
   }
 
   /**
-   * @dev Returns the multiplication of two unsigned integers, reverting on
+   * @main Returns the multiplication of two unsigned integers, reverting on
    * overflow.
    *
    * Counterpart to Solidity's `*` operator.
@@ -200,7 +200,7 @@ library SafeMath {
   }
 
   /**
-   * @dev Returns the integer division of two unsigned integers. Reverts on
+   * @main Returns the integer division of two unsigned integers. Reverts on
    * division by zero. The result is rounded towards zero.
    *
    * Counterpart to Solidity's `/` operator. Note: this function uses a
@@ -215,7 +215,7 @@ library SafeMath {
   }
 
   /**
-   * @dev Returns the integer division of two unsigned integers. Reverts with custom message on
+   * @main Returns the integer division of two unsigned integers. Reverts with custom message on
    * division by zero. The result is rounded towards zero.
    *
    * Counterpart to Solidity's `/` operator. Note: this function uses a
@@ -235,7 +235,7 @@ library SafeMath {
   }
 
   /**
-   * @dev Returns the remainder of dividing two unsigned integers. (unsigned integer modulo),
+   * @main Returns the remainder of dividing two unsigned integers. (unsigned integer modulo),
    * Reverts when dividing by zero.
    *
    * Counterpart to Solidity's `%` operator. This function uses a `revert`
@@ -250,7 +250,7 @@ library SafeMath {
   }
 
   /**
-   * @dev Returns the remainder of dividing two unsigned integers. (unsigned integer modulo),
+   * @main Returns the remainder of dividing two unsigned integers. (unsigned integer modulo),
    * Reverts with custom message when dividing by zero.
    *
    * Counterpart to Solidity's `%` operator. This function uses a `revert`
